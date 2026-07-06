@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio: Trevor Thompson</title>
+<meta name="description" content="Interaction Design, UX, Business Analysis, Digital Production, Service Design — the portfolio of Trevor Thompson.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Open+Sans:ital,wght@0,400;0,600;1,400&family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#1E9FD9;      /* the theme's cyan-blue */
+  --body-text:#6B6B6B;   /* soft grey body copy */
+  --dark-text:#3A3A3A;
+  --hairline:#EBEBEB;
+  --caption:#8A8A8A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  background:#fff;
+  color:var(--body-text);
+  font-family:'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size:16px;
+  line-height:1.75;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* ---------- masthead: tagline left, title right (as original) ---------- */
+.masthead{display:grid;grid-template-columns:230px 1fr;gap:40px;padding:70px 0 0}
+.tagline{
+  font-family:'PT Serif', Georgia, serif;font-style:italic;
+  color:#8A8A8A;font-size:16px;line-height:1.7;padding-top:14px;
+}
+.site-title{
+  font-family:'Oswald', 'Arial Narrow', sans-serif;font-weight:500;
+  font-size:clamp(1.9rem,4.5vw,2.9rem);
+  text-transform:uppercase;letter-spacing:.01em;
+  color:var(--accent);line-height:1.15;
+}
+.site-title a{color:var(--accent)}
+.site-title a:hover{text-decoration:none}
+
+/* ---------- nav ---------- */
+.main-nav{
+  grid-column:2;
+  border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);
+  margin-top:34px;padding:16px 0;
+  display:flex;gap:28px;flex-wrap:wrap;
+}
+.main-nav a{font-size:16px;color:var(--accent)}
+.main-nav a[aria-current="page"]{color:#B5B5B5;pointer-events:none}
+.main-nav a:hover{text-decoration:none;color:#1580B3}
+
+/* ---------- page views ---------- */
+.view{display:none}
+.view.active{display:block}
+main{padding-bottom:30px}
+
+/* ---------- post entries: meta rail left, content right ---------- */
+article.post{
+  display:grid;grid-template-columns:230px 1fr;gap:40px;
+  padding:56px 0 26px;
+}
+article.post.hidden{display:none}
+.meta{font-size:15px;line-height:2;padding-top:52px}
+.meta .row{display:flex;gap:9px;align-items:flex-start}
+.meta svg{width:16px;height:16px;flex:none;margin-top:7px;fill:#9a9a9a}
+.meta a{color:var(--accent)}
+.entry h2{
+  font-family:'Oswald','Arial Narrow',sans-serif;font-weight:500;
+  text-transform:uppercase;letter-spacing:.015em;
+  color:var(--accent);font-size:1.55rem;line-height:1.25;
+  margin-bottom:18px;
+  text-shadow:1px 1px 0 rgba(255,255,255,.9), 2px 2px 0 rgba(30,159,217,.18);
+}
+.entry ul{margin:0 0 14px 20px}
+.entry ul li{margin-bottom:9px}
+.entry ul ul{margin-top:9px}
+.entry p{margin-bottom:14px}
+.entry figure{margin:6px 0 22px;text-align:center;max-width:600px}
+.entry figure img{
+  max-width:100%;height:auto;
+  border:1px solid var(--hairline);padding:8px;background:#fff;
+}
+.entry figcaption{
+  font-family:'PT Serif',Georgia,serif;font-style:italic;
+  color:var(--caption);font-size:14.5px;margin-top:8px;
+}
+.entry .h3{font-weight:600;color:var(--dark-text);margin:18px 0 8px}
+hr.post-sep{border:none;border-bottom:1px solid var(--hairline);margin:0}
+
+/* ---------- static page content ---------- */
+.page-body{display:grid;grid-template-columns:230px 1fr;gap:40px;padding:56px 0 26px}
+.page-body .entry h2{margin-bottom:24px}
+.page-body .entry strong{color:var(--dark-text);font-weight:600}
+.page-body .entry .float-img{float:right;margin:0 0 18px 26px;max-width:360px}
+@media (max-width:760px){.page-body .entry .float-img{float:none;margin:0 0 18px}}
+.wp-button{
+  display:inline-block;background:var(--accent);color:#fff;
+  padding:10px 22px;border-radius:3px;font-size:15px;margin:6px 0 18px;
+}
+.wp-button:hover{background:#1580B3;text-decoration:none}
+
+/* ---------- widgets footer area ---------- */
+.widgets{
+  display:grid;grid-template-columns:230px 1fr;gap:40px;
+  padding:60px 0 20px;
+}
+.widgets .inner{grid-column:2}
+.widget{margin-bottom:44px}
+.widget h3{
+  font-family:'Oswald','Arial Narrow',sans-serif;font-weight:500;
+  text-transform:uppercase;color:var(--dark-text);
+  font-size:1.05rem;letter-spacing:.06em;margin-bottom:14px;
+}
+.widget ul{list-style:none}
+.widget ul li{padding:3px 0;border-bottom:none}
+.widget ul a{color:var(--accent)}
+.widget ul .cat-count{color:var(--body-text)}
+.searchbox{display:flex;gap:8px;max-width:340px}
+.searchbox input{
+  flex:1;border:1px solid #ccc;border-radius:2px;
+  padding:8px 10px;font:inherit;color:var(--dark-text);
+}
+.searchbox button{
+  background:#F7F7F7;border:1px solid #ccc;border-radius:2px;
+  padding:8px 16px;font:inherit;color:var(--dark-text);cursor:pointer;
+}
+.searchbox button:hover{background:#eee}
+.filter-note{font-size:14px;margin:20px 0 0;display:none}
+.filter-note.show{display:block}
+.filter-note a{cursor:pointer}
+
+footer.site-footer{
+  border-top:1px solid var(--hairline);
+  padding:26px 24px 44px;text-align:left;
+  font-size:14.5px;color:#9a9a9a;
+}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* ---------- responsive ---------- */
+@media (max-width:760px){
+  .masthead,article.post,.page-body,.widgets{grid-template-columns:1fr;gap:10px}
+  .masthead{padding-top:40px}
+  .main-nav{grid-column:1}
+  .meta{padding-top:0;display:flex;gap:22px;flex-wrap:wrap}
+  .meta .row{align-items:center}
+  .meta svg{margin-top:0}
+  .widgets .inner{grid-column:1}
+  article.post{padding-top:40px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="masthead">
+    <p class="tagline">Interaction Design, UX, Business Analysis, Digital Production, Service Design</p>
+    <div>
+      <h1 class="site-title"><a href="#home" data-nav="home">Portfolio: Trevor Thompson</a></h1>
+      <nav class="main-nav" aria-label="Site">
+        <a href="#home" data-nav="home" aria-current="page">Home</a>
+        <a href="#about" data-nav="about">About Me</a>
+        <a href="#cv" data-nav="cv">My CV</a>
+        <a href="#other" data-nav="other">Other Activities</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <div id="view-home" class="view active">
+      <p class="filter-note" id="filter-note"></p>
+      <div id="posts"></div>
+    </div>
+    <div id="view-about" class="view"></div>
+    <div id="view-cv" class="view"></div>
+    <div id="view-other" class="view"></div>
+
+    <div class="widgets">
+      <div class="inner">
+        <div class="widget">
+          <h3>Categories</h3>
+          <ul id="cat-list"></ul>
+        </div>
+        <div class="widget">
+          <h3>Search</h3>
+          <div class="searchbox">
+            <input type="search" id="search-input" placeholder="Search …" aria-label="Search projects">
+            <button id="search-btn">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© Trevor Thompson</span>
+    <span>Rebuilt from trevorius.wordpress.com</span>
+  </div>
+</footer>
+
+<script id="site-data" type="application/json">{
+  "site": {
+    "title": "Portfolio: Trevor Thompson",
+    "tagline": "Interaction Design, UX, Business Analysis, Digital Production, Service Design",
+    "original_url": "https://trevorius.wordpress.com/",
+    "author": "Trevor Thompson",
+    "exported": "2026-07-06",
+    "categories": {
+      "Business Analysis": 21,
+      "Information Architecture": 21,
+      "Interaction & UX Design": 21,
+      "Project Management": 9,
+      "Service Design": 2,
+      "Usability": 15
+    }
+  },
+  "posts": [
+    {
+      "id": "TT-01",
+      "title": "UTS Research Service Design",
+      "date": "2021-01-01",
+      "slug": "uts-research-service-design",
+      "original_url": "https://trevorius.wordpress.com/2021/01/01/uts-research-service-design/",
+      "categories": [
+        "Business Analysis",
+        "Service Design"
+      ],
+      "organisation": "UTS",
+      "images": [],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "UTS's Research Office wanted to understand researcher needs and priorities for next developments.",
+        "Two projects were carried out; one for Higher Degree Research students and one for academic researchers",
+        "I established the scope and definition of the projects.",
+        "I recruited Service Designers. We ran Design Thinking and Human Centred Design processes to explore the needs of researchers, generate ideas and test them.",
+        "I oversaw the process and outputs, and supervised business analyst support",
+        "Output reports included personas, as-is and to-be customer journeys, service design blueprints, recommended roadmap and others."
+      ]
+    },
+    {
+      "id": "TT-02",
+      "title": "UTS Agile Delivery Framework",
+      "date": "2020-12-30",
+      "slug": "uts-agile-development-and-governance-framework",
+      "original_url": "https://trevorius.wordpress.com/2020/12/30/uts-agile-development-and-governance-framework/",
+      "categories": [
+        "Business Analysis",
+        "Project Management"
+      ],
+      "organisation": "UTS",
+      "images": [
+        {
+          "url": "media/agile-project-governance-and-delivery-framework-2.jpg",
+          "caption": ""
+        }
+      ],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "I was lead analyst on “Project Ares” – UTS’s Agile Delivery and Governance Framework",
+        "This consisted of an overarching framework, document templates and a supporting knowledge database.",
+        "We created the framework iteratively – producing an initial draft in discussion with stakeholders and an agile coach, piloting with several projects and then incorporating feedback.",
+        "The framework was finalised and rolled out in July 2020."
+      ]
+    },
+    {
+      "id": "TT-03",
+      "title": "UTS Canvas Admin Tool",
+      "date": "2020-12-28",
+      "slug": "uts-canvas-admin-tool",
+      "original_url": "https://trevorius.wordpress.com/2020/12/28/uts-canvas-admin-tool/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture",
+        "Interaction & UX Design",
+        "Usability"
+      ],
+      "organisation": "UTS",
+      "images": [
+        {
+          "url": "media/cat.png",
+          "caption": ""
+        }
+      ],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "UTS required a new application that would: provide a console for administrators to create new courses and other tasks; automate data transfer between the Canvas Learning Management System and the Student Management System; significantly reduce the time and manual task load of administrators. Over time, other functions were implemented including automation of Student Grades transfer and integration with class scheduling systems.",
+        "I led the functional design and requirements process, and managed the CAT roadmap over two years. Wireframing and visual prototyping were a significant part of the design and requirements process.",
+        "Highly agile development process – I led the design and requirements management processes, liaising with the development team, users, and business stakeholders."
+      ]
+    },
+    {
+      "id": "TT-04",
+      "title": "Healthdirect website redesign",
+      "date": "2020-12-28",
+      "slug": "healthdirect-website-redesign",
+      "original_url": "https://trevorius.wordpress.com/2020/12/28/healthdirect-website-redesign/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture",
+        "Interaction & UX Design",
+        "Project Management",
+        "Usability"
+      ],
+      "organisation": "Healthdirect",
+      "images": [
+        {
+          "url": "media/hda-logo.png",
+          "caption": ""
+        }
+      ],
+      "downloads": [],
+      "links": [
+        {
+          "label": "Healthdirect's website",
+          "url": "http://www.healthdirect.org.au"
+        }
+      ],
+      "body_points": [
+        "Healthdirect is a government-owned company that provides online and phone-delivered health advice, as well as other services.",
+        "The main Healthdirect website needed to be redesigned and rebuilt, to implement a range of improvements including: implementing a new Medicines section; topic search improvements; integrating the health services directory; a range of usability issues.",
+        "I led the end-to-end process including facilitating design studios, liaising with designers, prototyping, user testing.",
+        "Agile development process, the improvements were delivered over a series of iterations. I led the requirements and design management."
+      ]
+    },
+    {
+      "id": "TT-05",
+      "title": "Healthdirect App",
+      "date": "2020-12-27",
+      "slug": "healthdirect-app",
+      "original_url": "https://trevorius.wordpress.com/2020/12/27/healthdirect-app/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture",
+        "Interaction & UX Design",
+        "Project Management",
+        "Usability"
+      ],
+      "organisation": "Healthdirect",
+      "images": [
+        {
+          "url": "media/healthdirect-app.jpg",
+          "caption": ""
+        }
+      ],
+      "downloads": [],
+      "links": [
+        {
+          "label": "Healthdirect's app",
+          "url": "https://www.healthdirect.gov.au/health-app"
+        }
+      ],
+      "body_points": [
+        "Healthdirect is a government-owned company that provides online and phone-delivered health advice, as well as other services.",
+        "Aim of this project was to deliver main online services in app form",
+        "Includes: all health topics content; medicines information; symptom checker; health service directory.",
+        "I led the end-to-end process of gathering requirements, prototyping, user testing, design management and functional specifications.",
+        "Agile development process – led the requirements and design management.",
+        "Liaised with third-party designers and developers.",
+        "Managed sprint planning, showcases, and retrospectives.",
+        "Managed roadmap of development for two years."
+      ]
+    },
+    {
+      "id": "TT-06",
+      "title": "Healthdirect Symptom Checker",
+      "date": "2020-12-27",
+      "slug": "healthdirect-symptom-checker",
+      "original_url": "https://trevorius.wordpress.com/2020/12/27/healthdirect-symptom-checker/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture",
+        "Interaction & UX Design",
+        "Project Management",
+        "Usability"
+      ],
+      "organisation": "Healthdirect",
+      "images": [
+        {
+          "url": "media/symptom-checker.png",
+          "caption": ""
+        }
+      ],
+      "downloads": [],
+      "links": [
+        {
+          "label": "Healthdirect's Symptom Checker",
+          "url": "https://www.healthdirect.gov.au/symptom-checker"
+        }
+      ],
+      "body_points": [
+        "Healthdirect is a government-owned company that provides online and phone-delivered health advice, as well as other services.",
+        "The Symptom Checker asks the user questions and then provides advice on next steps to take.",
+        "I led the end-to-end process of gathering requirements, prototyping, user testing, design and functional specifications.",
+        "Involved selection of best COTS decision tree software to drive the content management and functionality.",
+        "Agile development process – led the requirements and design management.",
+        "Liaised with third-party designers & developers, medical content producers.",
+        "Managed roadmap of development for four years."
+      ]
+    },
+    {
+      "id": "TT-07",
+      "title": "Dept of Sustainability Information Management Roadmap",
+      "date": "2020-12-14",
+      "slug": "dept-of-sustainability-information-roadmap",
+      "original_url": "https://trevorius.wordpress.com/2020/12/14/dept-of-sustainability-information-roadmap/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture"
+      ],
+      "organisation": "Dept of Sustainability (via Jacobs Engineering)",
+      "images": [
+        {
+          "url": "media/dsewpac-logo.png",
+          "caption": ""
+        }
+      ],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "As a consultant working for Jacobs Engineering, I produced an information management roadmap for the Dept of Sustainability, Environment, Water, Population and Communities.",
+        "The roadmap included recommendations on information storage systems and structures, staffing needs, access schemes, and processes for information management.",
+        "Activities included workshops, interviews and presentations to key stakeholders."
+      ]
+    },
+    {
+      "id": "TT-08",
+      "title": "APA Group Information Management Roadmap",
+      "date": "2020-12-14",
+      "slug": "apa-group-information-management-roadmap",
+      "original_url": "https://trevorius.wordpress.com/2020/12/14/apa-group-information-management-roadmap/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture"
+      ],
+      "organisation": "APA Group (via Jacobs Engineering)",
+      "images": [
+        {
+          "url": "media/apa-logo.png",
+          "caption": ""
+        }
+      ],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "APA Group is an Australian energy infrastructure company.",
+        "As a consultant working for Jacobs Engineering, I produced an Information Management Roadmap which included recommendations on key information types, information storage systems and structures, staffing needs, access schemes, and processes for information management especially between central and regional offices.",
+        "Activities included workshops, interviews and presentations to key stakeholders."
+      ]
+    },
+    {
+      "id": "TT-09",
+      "title": "Raymarine ST-70 Multifunction Color Instrument",
+      "date": "2011-07-23",
+      "slug": "raymarine-st-70-multifunction-color-instruments",
+      "original_url": "https://trevorius.wordpress.com/2011/07/23/raymarine-st-70-multifunction-color-instruments/",
+      "categories": [
+        "Interaction & UX Design",
+        "Usability"
+      ],
+      "organisation": "Raymarine",
+      "images": [
+        {
+          "url": "media/st70-3-processed5.png",
+          "caption": "ST-70 Instrument"
+        },
+        {
+          "url": "media/st70_wireframes1.png",
+          "caption": "Wireframes used in testing"
+        }
+      ],
+      "downloads": [
+        {
+          "label": "Paper Prototype User Survey (PDF)",
+          "url": "media/paper-user-test.pdf"
+        }
+      ],
+      "links": [],
+      "body_points": [
+        "Raymarine is a manufacturer of boating systems and instruments.",
+        "They were building their first small screen instruments using full-colour screens, rather than monochrome LCD. This allowed much more flexible and informative interfaces, similar to TomTom.",
+        "They needed user research, interface design and user testing for the new device.",
+        "As a consultant: I interviewed user groups; I designed screens, icons and processes; I used paper prototyping surveys to test these with users; I later oversaw the final graphic design of the icons.",
+        "These were implemented in Raymarine's ST70 Multifunction Color Instrument."
+      ]
+    },
+    {
+      "id": "TT-10",
+      "title": "Raymarine Situational Awareness Research",
+      "date": "2011-07-22",
+      "slug": "trevor-thompsons-portfolio",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/trevor-thompsons-portfolio/",
+      "categories": [
+        "Business Analysis",
+        "Interaction & UX Design",
+        "Service Design"
+      ],
+      "organisation": "Raymarine",
+      "images": [
+        {
+          "url": "media/raymarine-slide.png",
+          "caption": "Research presentation slide"
+        }
+      ],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "Raymarine is a manufacturer of boating systems and instruments.",
+        "Needed a broad understanding of customers' desires in boating technology over the medium term",
+        "Particular focus was on “Situational Awareness”, that is, how can instruments give you more awareness of what's going on around you at all times.",
+        "As a consultant, I prepared and facilitated workshops in Plymouth, UK and Boston, USA with Raymarine's customer liaison groups",
+        "Presented results back to management team who were very happy with the insights gained",
+        "General finding: Customers wanted to be able to easily compare their current position and situation with the trip plan they had prepared earlier.",
+        "Some findings: Customers needed to start their user journey at home before the trip, creating the plan which would then be uploaded to their boat system online; Instrumentation should automatically warn the user if they were deviating from the plan, or if predicted conditions made it likely they would do so"
+      ]
+    },
+    {
+      "id": "TT-11",
+      "title": "Centrica's Onboarding Website",
+      "date": "2011-07-22",
+      "slug": "centricas-onboarding-website",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/centricas-onboarding-website/",
+      "categories": [
+        "Business Analysis",
+        "Interaction & UX Design",
+        "Project Management"
+      ],
+      "organisation": "Centrica (at The Group)",
+      "images": [
+        {
+          "url": "media/onboarding.jpg",
+          "caption": "Page from Onboarding specification"
+        }
+      ],
+      "downloads": [
+        {
+          "label": "Extract – Centrica Onboarding Functional Specification (PDF)",
+          "url": "media/extract-centrica-onboarding-functional-specification1.pdf"
+        }
+      ],
+      "links": [],
+      "body_points": [
+        "Centrica is a large energy company that owns British Gas amongst other companies.",
+        "They wanted to build an “Onboarding” website. This would allow new employees to carry out online training modules after they'd been offered the job, but before they actually started in the office.",
+        "It would also allow managers to see which new recruits had completed their training and who should be reminded.",
+        "I gathered requirements from Centrica stakeholders, wrote the full functional specification and advised on graphic design.",
+        "I also acted as The Group's producer on this project."
+      ]
+    },
+    {
+      "id": "TT-12",
+      "title": "Centrica Data Centre Interaction Design",
+      "date": "2011-07-22",
+      "slug": "centrica-data-centre-interaction-design",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/centrica-data-centre-interaction-design/",
+      "categories": [
+        "Information Architecture",
+        "Interaction & UX Design"
+      ],
+      "organisation": "Centrica (at The Group)",
+      "images": [
+        {
+          "url": "media/centrica_data_centre.jpg",
+          "caption": "Centrica Data Centre"
+        }
+      ],
+      "downloads": [
+        {
+          "label": "Extract – Centrica Data Centre Functionality Outline (PDF)",
+          "url": "media/extract-centrica-data-centre.pdf"
+        }
+      ],
+      "links": [
+        {
+          "label": "View Centrica's Data Centre",
+          "url": "http://www.centrica.com/datastore/index.asp"
+        }
+      ],
+      "body_points": [
+        "Centrica is a large British energy company that owns British Gas amongst other companies.",
+        "They wanted to include a data centre in their annual report. This would allow users to select performance measures and compare trends.",
+        "I produced wireframes which informed the graphic design and served as a specification for the developers.",
+        "It allows the user to compare several different measures on the same chart, and view them as a bar chart, line graph, stacked bars, pie charts or a table.",
+        "The Data Centre appears in a standalone window from various pages on the Centrica website and the 2010 Annual Report."
+      ]
+    },
+    {
+      "id": "TT-13",
+      "title": "The Group's CMS Modules",
+      "date": "2011-07-22",
+      "slug": "165",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/165/",
+      "categories": [
+        "Business Analysis",
+        "Interaction & UX Design",
+        "Usability"
+      ],
+      "organisation": "The Group",
+      "images": [
+        {
+          "url": "media/blog1.jpg",
+          "caption": "Wireframe from prototype"
+        },
+        {
+          "url": "media/cms-digital-assets-library-upload-journey2.jpg",
+          "caption": "User Journey for Digital Assets Library module"
+        }
+      ],
+      "downloads": [
+        {
+          "label": "Extract – Email Services Specification (PDF)",
+          "url": "media/extract-email-services-specification.pdf"
+        },
+        {
+          "label": "Extract – User Journey – Media Library Upload (PDF)",
+          "url": "media/extract-user-journey-media-library-upload.pdf"
+        }
+      ],
+      "links": [],
+      "body_points": [
+        "My London employer, The Group, is a communications agency who have built their own, proprietary Content Management System.",
+        "I provided full functional specifications, including user journeys and interface wireframes for these CMS modules: Blogging; Blog Administrator; Digital Assets Library; SMS Services",
+        "I also carried out user testing on some of these modules using graphical HTML prototypes which I built"
+      ]
+    },
+    {
+      "id": "TT-14",
+      "title": "Gaia Insight Interaction and Functional Design",
+      "date": "2011-07-22",
+      "slug": "gaia-insight-interaction-functional-design",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/gaia-insight-interaction-functional-design/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture",
+        "Interaction & UX Design",
+        "Project Management",
+        "Usability"
+      ],
+      "organisation": "The Group",
+      "images": [
+        {
+          "url": "media/gaia-insight-screen.png",
+          "caption": "Gaia Insight"
+        }
+      ],
+      "downloads": [
+        {
+          "label": "Extract – Gaia Specification (PPT)",
+          "url": "media/extract-gaia-specification.ppt"
+        }
+      ],
+      "links": [
+        {
+          "label": "Gaia Insight website",
+          "url": "http://www.gaiainsight.com"
+        }
+      ],
+      "body_points": [
+        "Gaia Insight is the web analytics tool built in-house by The Group.",
+        "I produced wireframes and specification documents, liaising with the “client” which in this case was mainly the Principal of The Group.",
+        "The application includes a number of functions which were fairly unique, such as email alerts if selected organizations visit your site (like the Financial Times, for example, or competitor companies)."
+      ]
+    },
+    {
+      "id": "TT-15",
+      "title": "British Gas Jobs Website",
+      "date": "2011-07-22",
+      "slug": "british-gas-jobs-website",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/british-gas-jobs-website/",
+      "categories": [
+        "Information Architecture",
+        "Interaction & UX Design",
+        "Usability"
+      ],
+      "organisation": "British Gas (at The Group)",
+      "images": [
+        {
+          "url": "media/british_gas_wireframes.jpg",
+          "caption": "British Gas Jobs wireframe"
+        }
+      ],
+      "downloads": [
+        {
+          "label": "Extract – BG Wireframes and User Journey (PDF)",
+          "url": "media/extract-bg-wireframes-and-user-journey.pdf"
+        }
+      ],
+      "links": [
+        {
+          "label": "British Gas Jobs site",
+          "url": "http://www.britishgasjobs.co.uk/"
+        }
+      ],
+      "body_points": [
+        "The British Gas Jobs site provides information on working at British Gas and what roles are available.",
+        "I produced the sitemap, wireframes and user journey diagrams",
+        "The user journey needed to map to a third-party careers search tool"
+      ]
+    },
+    {
+      "id": "TT-16",
+      "title": "Aviva Athletics User Research",
+      "date": "2011-07-22",
+      "slug": "aviva-athletics-user-research",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/aviva-athletics-user-research/",
+      "categories": [
+        "Interaction & UX Design",
+        "Usability"
+      ],
+      "organisation": "Aviva (at The Group)",
+      "images": [],
+      "downloads": [
+        {
+          "label": "Extract – Aviva Athletics low-fi prototype (PPT)",
+          "url": "media/extract-aviva-athletics-research-wireframes.ppt"
+        }
+      ],
+      "links": [
+        {
+          "label": "Aviva Athletics site",
+          "url": "http://www.avivaathletics.co.uk/"
+        }
+      ],
+      "body_points": [
+        "Aviva is a FTSE 100 financial services company",
+        "They wanted to build a website which promoted their sponsorship of British athletics and individual athletes",
+        "Research was required into what users would like to see in such a site, why they would visit it, how planned content would be received",
+        "Budget was limited, so I created a low-fidelity prototype consisting of a suggested website, consisting of linked wireframe images",
+        "This was used in user testing and as the basis of user interviews"
+      ]
+    },
+    {
+      "id": "TT-17",
+      "title": "National Archives Information Architecture",
+      "date": "2011-07-22",
+      "slug": "national-archives-information-architecture",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/national-archives-information-architecture/",
+      "categories": [
+        "Information Architecture"
+      ],
+      "organisation": "The National Archives (UK)",
+      "images": [
+        {
+          "url": "media/national_archives.jpg",
+          "caption": "National Archives logo"
+        }
+      ],
+      "downloads": [],
+      "links": [
+        {
+          "label": "National Archives website",
+          "url": "http://www.nationalarchives.gov.uk/records/looking-for-subject/default.htm"
+        }
+      ],
+      "body_points": [
+        "The British National Archives needed user research in how best to categorize their many searchable record sets.",
+        "Public archives users – such as people researching their family history – needed to easily understand what records were available and how to find them.",
+        "I prepared, facilitated and analyzed a large card sort study with National Archives users.",
+        "The resulting categorization scheme was presented to the NA online team and was adopted as the basis of categorizing their records by subject on the National Archives website."
+      ]
+    },
+    {
+      "id": "TT-18",
+      "title": "Centrica Carbon Map",
+      "date": "2011-07-22",
+      "slug": "centrica-carbon-map",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/centrica-carbon-map/",
+      "categories": [
+        "Interaction & UX Design",
+        "Project Management"
+      ],
+      "organisation": "Centrica (at The Group)",
+      "images": [
+        {
+          "url": "media/carbon-map.jpg",
+          "caption": "Centrica's Carbon Emissions Map"
+        }
+      ],
+      "downloads": [],
+      "links": [
+        {
+          "label": "Carbon Emissions Map",
+          "url": "http://www.centrica.com/responsibility/index.asp?pageid=36"
+        }
+      ],
+      "body_points": [
+        "Centrica is a large British energy company that owns British Gas amongst other companies.",
+        "As part of their Annual Report they wanted a graphical way of showing where their carbon emissions were being generated",
+        "I analysed the data and proposed options in wireframes which were the basis of discussion with Centrica's CSR manager and our graphic design team.",
+        "The final result was a collaborative effort which had a few usability drawbacks but which was nonetheless cool and attractive.",
+        "I was also The Group's producer on this project."
+      ]
+    },
+    {
+      "id": "TT-19",
+      "title": "Centrica Intranet Design and Architecture",
+      "date": "2011-07-22",
+      "slug": "centrica-intranet-design-and-architecture",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/centrica-intranet-design-and-architecture/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture",
+        "Interaction & UX Design",
+        "Usability"
+      ],
+      "organisation": "Centrica (at The Group)",
+      "images": [
+        {
+          "url": "media/centrica_intranet.jpg",
+          "caption": "Centrica businesses"
+        }
+      ],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "Centrica is a large British energy company that owns British Gas amongst other companies.",
+        "They were unhappy with their existing intranet and were rolling out a new one using Microsoft SharePoint.",
+        "Centrica wanted each company to have its own branded intranet but also allow users access to the intranets of other Centrica companies within the same SharePoint structure.",
+        "For example, British Gas employees would have their own intranet but would also be able to switch into the Direct Energy intranet.",
+        "The intranet needed to pull together a range of previously disparate information sources, including those used by call centre teams while on the phone with customers. Speed of finding information was therefore a high priority.",
+        "The architecture needed to conform to certain constraints of the SharePoint system as there was no budget for extensive development.",
+        "I audited the existing intranet content and other information sources, and facilitated a series of workshops with managers and team members from the major divisions.",
+        "I produced wireframes and advised graphic designers on structure and functionality",
+        "The graphic designs, information architecture and other advice on functions were presented to Centrica's Director of CSR and Digital Media and their IT team. These were then implemented in their SharePoint intranet rollout."
+      ]
+    },
+    {
+      "id": "TT-20",
+      "title": "Tools for Annual and CSR Reports",
+      "date": "2011-07-22",
+      "slug": "tools-for-annual-and-csr-reports",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/tools-for-annual-and-csr-reports/",
+      "categories": [
+        "Business Analysis",
+        "Interaction & UX Design"
+      ],
+      "organisation": "The Group",
+      "images": [
+        {
+          "url": "media/report-tools-small.jpg",
+          "caption": "Report tools icons"
+        },
+        {
+          "url": "media/report-tools-my-report.jpg",
+          "caption": "Report tool: My Report"
+        }
+      ],
+      "downloads": [],
+      "links": [
+        {
+          "label": "Barclay's Annual Report",
+          "url": "http://www.barclaysannualreports.com/ar2010/index.asp?pageid=8"
+        },
+        {
+          "label": "Kingfisher's Responsibility report",
+          "url": "http://www.kingfisher.com/responsibility/index.asp?pageid=1"
+        }
+      ],
+      "body_points": [
+        "My London employer, The Group, is a corporate communications agency that produces many online Annual and CSR Reports.",
+        "Each online report features a set of tools including: Share (Email, Facebook, Twitter, Delicious, StumbleUpon, Reddit, Dig, Yahoo, Google); Notes (add a note to the page and also view notes you've made across the site); Download (current page as PDF, pages from 'My Report', other site downloads); Glossary (searchable and alphabetic, available from anywhere in the report); My Report (collect a list of your favourite pages – you can print, download or email them from here, and view your notes); Add-to-My-Report button; Print (print current page)",
+        "I produced wireframes for the reports, carried out user testing and produced full functional specifications."
+      ]
+    },
+    {
+      "id": "TT-21",
+      "title": "Flexirent Incentive and Rebate System Functional Design",
+      "date": "2011-07-22",
+      "slug": "flexirent-spiv-rebate-system-functional-design",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/flexirent-spiv-rebate-system-functional-design/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture",
+        "Interaction & UX Design"
+      ],
+      "organisation": "Flexirent",
+      "images": [
+        {
+          "url": "media/flexirent-logo.jpg",
+          "caption": "Flexirent logo"
+        }
+      ],
+      "downloads": [],
+      "links": [
+        {
+          "label": "Flexirent website",
+          "url": "http://www.flexirent.com.au"
+        }
+      ],
+      "body_points": [
+        "Flexirent is a finance company that provides credit to retail customers to buy goods on hire purchase.",
+        "The 'Flexirent Incentive and Rebate System' allowed retail sales staff to earn incentive points by selling Flexirent to customers.",
+        "The system included a complex system of timed goals and incentives, combinations of different products, and the ability for participants to keep points when they change employers.",
+        "I carried out workshops with senior Flexirent staff to ascertain the required functionality. I then wrote the full functional specification which included: documentation of all system functions for users (salespeople) and administrators (Flexirent team members); wireframes for all user and administrator interfaces; documentation of all user journeys and processes required to register users, create new financial products, report on performance, monitor users' sales activity, award points and provide the correct rebates.",
+        "The system was built and successfully ran the Flexirent sales incentive and rebate system."
+      ]
+    },
+    {
+      "id": "TT-22",
+      "title": "John Lewis Partnership Intranet Information Architecture",
+      "date": "2011-07-22",
+      "slug": "john-lewis-partnership-intranet-information-architecture",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/john-lewis-partnership-intranet-information-architecture/",
+      "categories": [
+        "Information Architecture"
+      ],
+      "organisation": "John Lewis Partnership",
+      "images": [
+        {
+          "url": "media/john-lewis-logo.jpg",
+          "caption": "John Lewis Partnership logo"
+        }
+      ],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "John Lewis Partnership is a large department store retailer in the UK.",
+        "Their intranet had become disorganised, cluttered and confusing. They needed a new information architecture.",
+        "I ran workshops and a card sort study with groups of John Lewis employees.",
+        "The results were presented to the Intranet Manager and adopted as the new intranet architecture."
+      ]
+    },
+    {
+      "id": "TT-23",
+      "title": "John Lewis Handheld Scanner Evaluation",
+      "date": "2011-07-22",
+      "slug": "john-lewis-handheld-scanner-evaluation",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/john-lewis-handheld-scanner-evaluation/",
+      "categories": [
+        "Usability"
+      ],
+      "organisation": "John Lewis Partnership",
+      "images": [
+        {
+          "url": "media/jlp-scanner.jpg",
+          "caption": "Handheld scanner screens"
+        }
+      ],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "John Lewis Partnership is a large department store retailer in the UK.",
+        "In 2006, as part of their gift list service, JLP provided customers with a hand-held scanner which allowed the customer to walk around the store, scanning products to build up their list.",
+        "I carried out a usability evaluation, going through the entire user journey from registering, collecting the device, receiving instructions, building a list and uploading it to their website.",
+        "A presentation and report of the findings was given to the JLP IT team, identifying 1 x high, 23 x medium and 5 x low priority issues."
+      ]
+    },
+    {
+      "id": "TT-24",
+      "title": "SABMiller Corporate Website",
+      "date": "2011-07-22",
+      "slug": "sabmiller-corporate-website",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/sabmiller-corporate-website/",
+      "categories": [
+        "Information Architecture",
+        "Interaction & UX Design",
+        "Usability"
+      ],
+      "organisation": "SABMiller",
+      "images": [],
+      "downloads": [],
+      "links": [
+        {
+          "label": "SABMiller corporate website",
+          "url": "http://www.sabmiller.com"
+        }
+      ],
+      "body_points": [
+        "SABMiller is a beer manufacturing company in the FTSE 100 with operations in over 75 countries",
+        "They wanted a new corporate website as their existing site was dated and amateurish",
+        "As User Experience Architect I produced the information architecture, and interaction design for the career section, media library and report tools and was responsible for usability overall",
+        "I also wrote the functional specification for the content management system and interaction with third-party systems including the Taleo careers application system and the news ticker from the company intranet"
+      ]
+    },
+    {
+      "id": "TT-25",
+      "title": "British Land Corporate Website",
+      "date": "2011-07-22",
+      "slug": "british-land-corporate-website",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/british-land-corporate-website/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture",
+        "Interaction & UX Design",
+        "Project Management"
+      ],
+      "organisation": "British Land (at The Group)",
+      "images": [
+        {
+          "url": "media/british-land-logo.jpg",
+          "caption": "British Land logo"
+        },
+        {
+          "url": "media/british-land-website.jpg",
+          "caption": "British Land search function"
+        }
+      ],
+      "downloads": [
+        {
+          "label": "Extract – British Land Specification (PDF)",
+          "url": "media/extract-british-land-specification.pdf"
+        }
+      ],
+      "links": [
+        {
+          "label": "British Land corporate website",
+          "url": "http://www.britishland.com"
+        }
+      ],
+      "body_points": [
+        "At my London employer, The Group, I was Senior UX Architect and Producer.",
+        "I acted in both roles for the British Land corporate website, writing functional specifications for the website and CMS configuration, and then project managing the build and delivery"
+      ]
+    },
+    {
+      "id": "TT-26",
+      "title": "The Group's Usability Specifics",
+      "date": "2011-07-22",
+      "slug": "the-groups-usability-specifics-guidelines",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/the-groups-usability-specifics-guidelines/",
+      "categories": [
+        "Usability"
+      ],
+      "organisation": "The Group",
+      "images": [
+        {
+          "url": "media/the-group-logo.jpg",
+          "caption": "The Group logo"
+        }
+      ],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "My London employer, The Group, is a communications agency.",
+        "The whole company including designers, account managers and project managers needed to have a good grasp of usability fundamentals.",
+        "I provided a one hour presentation for all new employees.",
+        "I also distributed a list of Usability Guidelines on a 10cm-wide strip that was blue-tacked to people's monitors, to one side of the screen.",
+        "I wanted the guidelines to be as concrete, specific and easy to apply as possible. That is, they should be concrete things like “Put the site search function in the top right of the page”, rather than abstract things like “Use commonly understood concepts and metaphors, and present information in a natural and logical order”."
+      ],
+      "extended_content": {
+        "heading": "The usability specifics I settled on were:",
+        "items": [
+          "1) Orwell's last writing rule: Orwell said the following about writing well (almost, it's slightly adapted) – “Break any of these rules sooner than create/design anything outright barbarous.” Nothing is set in stone. There will be situations where one or more of these rules should not be applied. But 9 times out of 10 they will.",
+          "2) Indicate the user's current position in the site: Navigation should always be highlighted so that you can see where you are. Users don't want to feel lost. This gives them something to hang onto. Also, users may have come straight to an inside page via a search engine and they'll need to know where they are.",
+          "3) Don't rely on breadcrumb navigation: Tests show that a lot of users never see breadcrumb trails. Some do, but a lot don't. Use them, they are helpful. But don't rely solely on them.",
+          "4) Logo is home link: The organisation's logo in the top left of the screen should be a link to the home page. This is a standard convention. Most users expect it to work this way.",
+          "5) Site search in top right: The site search should appear towards the top of the screen, and preferably on the right. Research by Shaik and Lenz shows that most users expect to see it there.",
+          "6) Display search criteria along with results: When you're looking at the search results page, you want to see what you entered in earlier. Don't just show the results without also showing something like “You entered 'XYZ'” at the top. It means the user doesn't have to rely on their fallible memory and can also see if they made any typos.",
+          "7) Indicate mandatory fields in forms: You should always be able to see which fields in a form are mandatory rather than have to guess.",
+          "8) Confirm the password in a registration form: Don't allow the user to enter their password only once if their input is masked by asterisks as they type. If they make a mistake they can't tell, and they won't be able to login.",
+          "9) Don't get developers to write error messages: Some developers write very well. But the developer also knows how the site is supposed to work and what it's supposed to do to an agonising level of detail. Best to get someone who's not so close to the project to do the wording for the messages.",
+          "10) Don't convey info only with colour: This is really an accessibility rule but it often comes up in usability evaluations. Colour can be used to reinforce information but shouldn't be the only means by which it is conveyed. Users with colour blindness will not be able to see the information.",
+          "11) Use terms consistently: If you use a term to describe something, always use that same term. This applies to content but also to navigation – if you click on an item you should go to a page that has the same heading as the thing you clicked on."
+        ]
+      }
+    },
+    {
+      "id": "TT-27",
+      "title": "Learndirect Usability Testing and Catalogue IA",
+      "date": "2011-07-22",
+      "slug": "learndirect-usability-testing-and-catalogue-ia",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/learndirect-usability-testing-and-catalogue-ia/",
+      "categories": [
+        "Information Architecture",
+        "Usability"
+      ],
+      "organisation": "Learndirect",
+      "images": [
+        {
+          "url": "media/learndirect-logo.jpg",
+          "caption": "Learndirect logo"
+        }
+      ],
+      "downloads": [],
+      "links": [
+        {
+          "label": "Learndirect",
+          "url": "http://www.learndirect.co.uk"
+        }
+      ],
+      "body_points": [
+        "Learndirect is a UK government organisation that provides e-learning and qualifications on a wide range of topics, via third party providers.",
+        "As a consultant, I carried out a card sort activity to improve the structure of the online catalogue",
+        "I also ran user testing on several Learndirect e-learning modules and presented the findings back to Learndirect."
+      ]
+    },
+    {
+      "id": "TT-28",
+      "title": "Blake Dawson Waldron SALT e-learning system",
+      "date": "2011-07-22",
+      "slug": "blake-dawson-waldron-salt-e-learning-system",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/blake-dawson-waldron-salt-e-learning-system/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture",
+        "Interaction & UX Design"
+      ],
+      "organisation": "Blake Dawson Waldron",
+      "images": [],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "Blake Dawson Waldron was an Australian legal firm.",
+        "They wanted a system that would deliver pre-packaged learning modules to users, and track their progress for compliance purposes.",
+        "I gathered requirements from BDW stakeholders, scoped the project and wrote the full functional specifications.",
+        "(Please note: This did not include the content of the pre-packaged learning modules, but the delivery and tracking of these modules.)"
+      ]
+    },
+    {
+      "id": "TT-29",
+      "title": "WorkCover NSW Website",
+      "date": "2011-07-22",
+      "slug": "workcover-nsw-website",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/workcover-nsw-website/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture"
+      ],
+      "organisation": "WorkCover NSW",
+      "images": [],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "WorkCover NSW needed a new website and wanted to use Microsoft Content Management Server to implement it. As business analyst I:",
+        "carried out requirements workshops",
+        "designed the information architecture",
+        "designed page templates",
+        "mapped organization workflows"
+      ]
+    },
+    {
+      "id": "TT-30",
+      "title": "Microsoft “Salsa” Marketing System",
+      "date": "2011-07-22",
+      "slug": "248",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/248/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture",
+        "Interaction & UX Design"
+      ],
+      "organisation": "Microsoft Australia (via Unique World)",
+      "images": [
+        {
+          "url": "media/microsoft-logo.jpg",
+          "caption": "Microsoft logo"
+        }
+      ],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "Microsoft Australia wanted a custom-built sales lead management system. Unique World as a Gold Partner development company was contracted to develop it.",
+        "The 'Salsa' system allowed contacts gathered from events and other sources to be entered. Marketing team members could then create campaigns, match them to contact categories and then track communications with them.",
+        "I liaised with Microsoft stakeholders and wrote the full functional specifications for the system.",
+        "It was built and delivered by Unique World."
+      ]
+    },
+    {
+      "id": "TT-31",
+      "title": "Maxxium SharePoint Intranet",
+      "date": "2011-07-22",
+      "slug": "maxxium-sharepoint-intranet",
+      "original_url": "https://trevorius.wordpress.com/2011/07/22/maxxium-sharepoint-intranet/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture"
+      ],
+      "organisation": "Maxxium",
+      "images": [],
+      "downloads": [],
+      "links": [],
+      "body_points": [
+        "Maxxium is an Australian beverage importer and distributor",
+        "They required a company intranet and had decided on Microsoft SharePoint as the platform",
+        "As the business analyst on this project I: ran requirements gathering workshops with business divisions; designed the information architecture; wrote the functional specification including SharePoint component configurations and document search metadata"
+      ]
+    },
+    {
+      "id": "TT-32",
+      "title": "Other projects I've worked on",
+      "date": "2011-07-21",
+      "slug": "other-projects-ive-worked-on",
+      "original_url": "https://trevorius.wordpress.com/2011/07/21/other-projects-ive-worked-on/",
+      "categories": [
+        "Business Analysis",
+        "Information Architecture",
+        "Interaction & UX Design",
+        "Project Management",
+        "Usability"
+      ],
+      "organisation": "Various",
+      "images": [],
+      "downloads": [],
+      "links": [],
+      "body_points": [],
+      "extended_content": {
+        "heading": "Business Analysis Projects",
+        "items": [
+          "Australian Council of State Emergency Services e-training site",
+          "Aviva Ocean Racing websites",
+          "Aviva brand identity",
+          "British Gas Careers website",
+          "E-lect – commercial polling management system",
+          "Epson SmartStore – online store",
+          "Epson Surveys – website survey and data management system",
+          "Flexirent After Tax Calculator",
+          "Flexirent Trade Up Calculator",
+          "IHG Innovation Hotel",
+          "Kellogg's Australia website and CMS",
+          "Maxxium Australia Microsoft SharePoint implementation",
+          "NSW Dept of Information Technology and Management website",
+          "NSW Dept of State and Regional Development Australian Technology showcase website, kiosk and CD",
+          "Provident Financial corporate site",
+          "SABMiller corporate site",
+          "Smart Internet Technology Co-operative Research Centre website and CMS",
+          "The Group website rebuild",
+          "Ticketek Australian Open online ticketing system",
+          "Wattyl Australia website and CMS",
+          "WorkCover NSW website and CMS"
+        ],
+        "heading2": "Usability Projects",
+        "items2": [
+          "Provident Financial corporate site usability testing",
+          "J-Sainsbury corporate site usability testing",
+          "The Home Office user research",
+          "Waitrose usability testing",
+          "The Environment Agency (UK) usability testing",
+          "Reed Business Information usability testing: Caterer, Estates Gazette, Kellysearch, New Scientist, Total Jobs, Xpert HR"
+        ]
+      }
+    }
+  ],
+  "pages": [
+    {
+      "id": "PAGE-ABOUT",
+      "title": "About Me",
+      "original_url": "https://trevorius.wordpress.com/about/",
+      "images": [
+        {
+          "url": "media/lyn-and-me1.jpg",
+          "caption": "Lyn and me"
+        },
+        {
+          "url": "media/tintin.jpg",
+          "caption": "Tin Tin"
+        }
+      ],
+      "content": {
+        "essentials": "I live in Sydney with my wife, Lyndal, and our two children.",
+        "education": [
+          "PhD in Philosophy from UNSW: Thesis topic “Science and Sentience”. You can view my thesis at UNSWorks or read a popular version of the main findings on my Unmaterialism 4.0 site",
+          "Graduate Diploma in Cognitive Science, UNSW",
+          "Bachelor of Arts with double major in Psychology, University of Western Australia",
+          "Extra major in Politics as a Continuing Education student, University of Western Australia"
+        ],
+        "inspirations_intro": "I am inspired by creative, dynamic, practical characters like:",
+        "inspirations": [
+          "Saul Griffith: Inventor, entrepreneur, environmentalist, renewable energy pioneer. Founder of Otherlabs and spin-off companies such as Sunfolding, Roam Robotics and other things.",
+          "Chip Conley: Founder of innovative Joie de Vivre hotels, promoter of “mojo” in business.",
+          "And also: Richard Feynman, Albert Einstein, John Stuart Mill, Tom Paine, Christopher Marlowe, Immanuel Kant …"
+        ],
+        "fun": "For fun, I like playing with the kids, and watching things made by Eddie Izzard, David Attenborough, Stephen Colbert, and Stephen Fry.",
+        "links": [
+          {
+            "label": "Thesis at UNSWorks",
+            "url": "http://www.unsworks.unsw.edu.au/primo_library/libweb/action/dlDisplay.do?vid=UNSWORKS&docId=unsworks_7842"
+          },
+          {
+            "label": "Unmaterialism 4.0",
+            "url": "http://unmaterialism.wordpress.com"
+          },
+          {
+            "label": "Saul Griffith's site",
+            "url": "http://www.saulgriffith.com/"
+          },
+          {
+            "label": "Chip Conley's site",
+            "url": "http://www.chipconley.com/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PAGE-CV",
+      "title": "My CV",
+      "original_url": "https://trevorius.wordpress.com/my-cv/",
+      "images": [
+        {
+          "url": "media/my-cv-at-a-glance-1.png",
+          "caption": "My CV at a Glance"
+        }
+      ],
+      "content": {
+        "text": "You can download my full CV in Word format.",
+        "downloads": [
+          {
+            "label": "Download my CV (PDF)",
+            "url": "media/cv-tthompson.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PAGE-OTHER",
+      "title": "Other Activities",
+      "original_url": "https://trevorius.wordpress.com/other-stuff/",
+      "images": [],
+      "content": {
+        "sections": [
+          {
+            "heading": "Philosophy site: Unmaterialism 4.0",
+            "text": "I have a philosophy blog site – Unmaterialism 4.0 – which explores in a popular way some of the main ideas discussed in my PhD thesis.",
+            "link": {
+              "label": "Unmaterialism 4.0",
+              "url": "http://unmaterialism.wordpress.com"
+            }
+          },
+          {
+            "heading": "Blog: Consciousness and Pop Stuff",
+            "text": "I have a blog called Consciousness and Pop Stuff in which I discuss, in a light-hearted way, the philosophical themes of TV shows and movies.",
+            "link": {
+              "label": "Consciousness and Pop Stuff",
+              "url": "http://consciousnessandpopstuff.wordpress.com/"
+            }
+          },
+          {
+            "heading": "Film-making: The Elsinore Deception",
+            "text": "A friend and I made a 51-min comedy mock-documentary based on Hamlet. It was screened at the University of Western Australia as part of their Shakespeare studies course. It was also shown at the West Australian Film & Television Institute Annual Festival.",
+            "link": null
+          },
+          {
+            "heading": "Philosophy Book",
+            "text": "I published an adapted version of my PhD thesis as a book on Amazon: Consciousness, Science and Observation.",
+            "link": {
+              "label": "Consciousness, Science and Observation on Amazon",
+              "url": "https://www.amazon.com.au/Consciousness-Science-Observation-Trevor-Thompson/dp/0646958828/"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}</script>
+<script>
+const DATA = JSON.parse(document.getElementById('site-data').textContent);
+const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+const CAL_ICON = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 0v2H2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-2V0h-2v2H6V0H4zM3 6h10v7H3V6z"/></svg>';
+const CAT_ICON = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 3a1 1 0 0 1 1-1h4l2 2h6a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3z"/></svg>';
+
+function fmtDate(d){
+  const [y,m,day] = d.split('-');
+  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  return months[+m-1] + ' ' + (+day) + ', ' + y;
+}
+
+/* ---------- posts ---------- */
+function postHTML(p){
+  let h = `<article class="post" data-cats="${esc(p.categories.join('|'))}" data-text="${esc((p.title+' '+p.organisation+' '+p.body_points.join(' ')).toLowerCase())}">`;
+  h += `<aside class="meta">
+    <div class="row">${CAL_ICON}<a href="#home">${fmtDate(p.date)}</a></div>
+    <div class="row">${CAT_ICON}<span>${p.categories.map(c=>`<a href="#home" data-cat="${esc(c)}">${esc(c)}</a>`).join(', ')}</span></div>
+  </aside>`;
+  h += `<div class="entry"><h2>${esc(p.title)}</h2>`;
+  for (const im of p.images.slice(0,1)) {
+    h += `<figure><img src="${im.url}" alt="${esc(im.caption||p.title)}" loading="lazy">`;
+    if (im.caption) h += `<figcaption>${esc(im.caption)}</figcaption>`;
+    h += `</figure>`;
+  }
+  if (p.body_points.length) h += '<ul>' + p.body_points.map(b=>`<li>${esc(b)}</li>`).join('') + '</ul>';
+  if (p.extended_content) {
+    const ec = p.extended_content;
+    h += `<p class="h3">${esc(ec.heading)}</p><ul>` + ec.items.map(i=>`<li>${esc(i)}</li>`).join('') + '</ul>';
+    if (ec.heading2) h += `<p class="h3">${esc(ec.heading2)}</p><ul>` + ec.items2.map(i=>`<li>${esc(i)}</li>`).join('') + '</ul>';
+  }
+  const extras = [];
+  for (const dl of p.downloads) extras.push(`<li>Download: <a href="${dl.url}">${esc(dl.label)}</a></li>`);
+  for (const lk of p.links) extras.push(`<li>See <a href="${lk.url}" rel="noopener">${esc(lk.label)}</a></li>`);
+  if (extras.length) h += `<ul>${extras.join('')}</ul>`;
+  h += `</div></article><hr class="post-sep">`;
+  return h;
+}
+document.getElementById('posts').innerHTML = DATA.posts.map(postHTML).join('');
+
+/* ---------- categories widget ---------- */
+const catList = document.getElementById('cat-list');
+catList.innerHTML = Object.entries(DATA.site.categories)
+  .map(([c,n])=>`<li><a href="#home" data-cat="${esc(c)}">${esc(c)}</a> <span class="cat-count">(${n})</span></li>`).join('');
+
+/* ---------- filtering (category + search) ---------- */
+const note = document.getElementById('filter-note');
+let activeCat = null, term = '';
+function applyFilter(){
+  let shown = 0;
+  document.querySelectorAll('article.post').forEach(a=>{
+    const okCat = !activeCat || a.dataset.cats.split('|').includes(activeCat);
+    const okTerm = !term || a.dataset.text.includes(term);
+    const show = okCat && okTerm;
+    a.classList.toggle('hidden', !show);
+    a.nextElementSibling.style.display = show ? '' : 'none';
+    if (show) shown++;
+  });
+  if (activeCat || term) {
+    let bits = [];
+    if (activeCat) bits.push(`category “${activeCat}”`);
+    if (term) bits.push(`search “${term}”`);
+    note.innerHTML = `Showing ${shown} posts for ${bits.join(' and ')}. <a id="clear-filter">Show all posts</a>`;
+    note.classList.add('show');
+    document.getElementById('clear-filter').addEventListener('click', ()=>{
+      activeCat = null; term = ''; document.getElementById('search-input').value=''; applyFilter();
+    });
+  } else note.classList.remove('show');
+}
+document.addEventListener('click', e=>{
+  const cat = e.target.closest('[data-cat]');
+  if (cat) { activeCat = cat.dataset.cat; showView('home'); applyFilter(); }
+});
+function runSearch(){
+  term = document.getElementById('search-input').value.trim().toLowerCase();
+  showView('home'); applyFilter();
+  document.querySelector('main').scrollIntoView();
+}
+document.getElementById('search-btn').addEventListener('click', runSearch);
+document.getElementById('search-input').addEventListener('keydown', e=>{ if(e.key==='Enter') runSearch(); });
+
+/* ---------- static pages ---------- */
+const about = DATA.pages.find(p=>p.id==='PAGE-ABOUT');
+const ac = about.content;
+document.getElementById('view-about').innerHTML = `
+<div class="page-body">
+  <aside class="meta"></aside>
+  <div class="entry">
+    <h2>About Me</h2>
+    <figure class="float-img"><img src="${about.images[0].url}" alt="${esc(about.images[0].caption)}" loading="lazy"><figcaption>${esc(about.images[0].caption)}</figcaption></figure>
+    <p><strong>The Essentials</strong></p>
+    <p>${esc(ac.essentials)}</p>
+    <p><strong>Education</strong></p>
+    <ul>${ac.education.map(e=>`<li>${esc(e)}</li>`).join('')}</ul>
+    <p>${esc(ac.inspirations_intro)}</p>
+    <figure class="float-img"><img src="${about.images[1].url}" alt="${esc(about.images[1].caption)}" loading="lazy"><figcaption>${esc(about.images[1].caption)}</figcaption></figure>
+    <ul>${ac.inspirations.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>
+    <p>${esc(ac.fun)}</p>
+    <ul>${ac.links.map(l=>`<li><a href="${l.url}" rel="noopener">${esc(l.label)}</a></li>`).join('')}</ul>
+  </div>
+</div>`;
+
+const cv = DATA.pages.find(p=>p.id==='PAGE-CV');
+document.getElementById('view-cv').innerHTML = `
+<div class="page-body">
+  <aside class="meta"></aside>
+  <div class="entry">
+    <h2>My CV</h2>
+    <p>${esc(cv.content.text)}</p>
+    <a class="wp-button" href="${cv.content.downloads[0].url}">Download my CV (PDF)</a>
+    <figure><img src="${cv.images[0].url}" alt="My CV at a glance" loading="lazy"><figcaption>${esc(cv.images[0].caption)}</figcaption></figure>
+  </div>
+</div>`;
+
+const other = DATA.pages.find(p=>p.id==='PAGE-OTHER');
+document.getElementById('view-other').innerHTML = `
+<div class="page-body">
+  <aside class="meta"></aside>
+  <div class="entry">
+    <h2>Other Activities</h2>
+    ${other.content.sections.map(s=>`
+      <p><strong>${esc(s.heading)}</strong></p>
+      <p>${esc(s.text)}${s.link?` <a href="${s.link.url}" rel="noopener">${esc(s.link.label)}</a>`:''}</p>`).join('')}
+  </div>
+</div>`;
+
+/* ---------- view switching (mimics the original's pages) ---------- */
+function showView(name){
+  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active', v.id==='view-'+name));
+  document.querySelectorAll('[data-nav]').forEach(a=>{
+    if (a.closest('.main-nav')) a.setAttribute('aria-current', a.dataset.nav===name ? 'page' : 'false');
+  });
+  if (location.hash !== '#'+name) history.replaceState(null,'','#'+name);
+  window.scrollTo({top:0});
+}
+document.querySelectorAll('[data-nav]').forEach(a=>{
+  a.addEventListener('click', e=>{ e.preventDefault(); showView(a.dataset.nav); });
+});
+const initial = (location.hash||'#home').slice(1);
+showView(['home','about','cv','other'].includes(initial) ? initial : 'home');
+</script>
+</body>
+</html>
